@@ -6,6 +6,6 @@ public class GoogleTest extends BaseTest{
         driver.get("https://www.orangehrm.com/en");
         System.out.println("Page Title: " + driver.getTitle());
         Thread.sleep(15000);
-        //added comment
+        
     }
 }
