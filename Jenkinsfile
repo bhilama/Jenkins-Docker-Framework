@@ -30,7 +30,7 @@ pipeline{
 
     post{
         always{
-            junit '**/test-output/testng-results.xml'
+            junit 'target/surefire-reports/testng-results.xml'
             bat 'docker-compose down'
         }
     }
