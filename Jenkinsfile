@@ -16,22 +16,22 @@ pipeline{
 
         stage('Start Selenium Grid'){
             steps{
-                sh 'docker-compose down || true'
-                sh 'docker-compose up -d'
+                bat 'docker-compose down || echo Grid already down'
+                bat 'docker-compose up -d'
             }
         }
 
         stage('Run Tests'){
             steps{
-                sh 'mvn clean test -DsuiteXmlFile=TestNG.xml'
+                bat 'mvn clean test -DsuiteXmlFile=TestNG.xml'
             }
         }
     }
 
     post{
         always{
-            juni '**/test-output/testng-results.xml'
-            sh 'docker-compose down'
+            junit '**/test-output/testng-results.xml'
+            bat 'docker-compose down'
         }
     }
 }
