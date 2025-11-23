@@ -2,14 +2,14 @@
 <suite name="Selenium Grid Suite" parallel="tests" thread-count="2">
 
     <test name="Chrome Test">
-        <parameter name="browser", value="chrome"/>
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.dockerDemo.GoogleTest"/>
         </classes>
     </test>
 
     <test name="Firefox Test">
-        <parameter name="browser", value="firefox"/>
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="com.dockerDemo.GoogleTest"/>
         </classes>
